@@ -9,13 +9,13 @@ https://github.com/Udayraj123
 """
 Constants
 """
-display_height = int(480)
-display_width  = int(640)
-windowWidth = 1280
-windowHeight = 720
+display_height = int(620)
+display_width  = int(437)
+windowWidth = 620
+windowHeight = 437
 
 saveMarked = 1
-showimglvl = 2
+showimglvl = 0 #2
 saveimglvl = 0
 PRELIM_CHECKS=0
 saveImgList = {}

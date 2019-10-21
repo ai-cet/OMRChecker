@@ -1,0 +1,30 @@
+{
+  "Dimensions": [1000, 2000 ],
+  "BubbleDimensions": [15, 24 ],
+  "Concatenations" : {},
+  
+  "Singles" : ["q1","q2","q3","q4","q5", "q6", "q7", "q8", "q9", "q10",
+               "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20"],
+  "MCQBlock1": {
+    "qType": "QTYPE_MCQ5",
+    "orig": [153, 1168],
+    "qNos": [
+      [
+        ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"]
+      ]
+    ],  
+    "gaps" : [28, 81],
+    "bigGaps" : [0, 0]
+  },
+  "MCQBlock2": {
+    "qType": "QTYPE_MCQ5",
+    "orig": [380, 1168],
+    "qNos": [
+      [
+        ["q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20"]
+      ]
+    ],  
+    "gaps" : [28, 81],
+    "bigGaps" : [0, 0]
+  }
+}

@@ -320,7 +320,7 @@ for filepath in allOMRs:
         for squad in templJSON.keys():
             for fileKey in filesMap[squad].keys():
                 filesObj[squad][fileKey].flush()
-        break
+        #break
 # x = x.sort_values(by=['score','num_correct','num_wrong'],ascending=False)
 # x.to_sql('test.sql','SQLAlchemy')
 
