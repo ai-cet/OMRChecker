@@ -1,30 +1,78 @@
 {
-  "Dimensions": [1000, 2000 ],
-  "BubbleDimensions": [15, 24 ],
-  "Concatenations" : {},
-  
+  "Globals": {
+    "windowWidth": 2912,
+    "windowHeight": 3306,
+    "display_width": 728 ,
+    "display_height": 826
+  },
+  "Dimensions": [2912, 3306 ],
+  "BubbleDimensions": [40, 40 ],
+  "Concatenations" : {
+    "Roll" : ["stu","roll0", "roll1", "roll2", "roll3", "roll4", "roll5", "roll6", "check"]
+  },
+  "Check1": {
+    "orig": [2240, 722],
+    "gaps": [ 66, 66],
+    "bigGaps": [20, 20],
+    "qNos": [[["check"]]],
+    "vals": ["A","B","C","D","E","F","G","H","I","J","K","L","M"],
+    "orient": "V"
+  },
+  "Check2": {
+    "orig": [2306, 722],
+    "gaps": [ 66, 66],
+    "bigGaps": [20, 20],
+    "qNos": [[["check"]]],
+    "vals":  ["N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],
+    "orient": "V"
+  },
+"Stu": {
+    "orig": [1706, 722],
+    "gaps": [ 66, 66],
+    "bigGaps": [20, 20],
+    "qNos": [[["stu"]]],
+    "vals": ["U", "A", "HT", "GT"],
+    "orient": "V"
+  },
+  "Roll": {
+    "qType": "QTYPE_ROLL",
+    "orig": [1774, 722],
+    "bigGaps": [
+      115,
+      11
+    ],
+    "gaps": [66, 66],
+    "qNos": [
+      [
+        [
+          "roll0",
+          "roll1",
+          "roll2",
+          "roll3",
+          "roll4",
+          "roll5",
+          "roll6"
+        ]
+      ]
+    ]
+  },
   "Singles" : ["q1","q2","q3","q4","q5", "q6", "q7", "q8", "q9", "q10",
-               "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20"],
+               "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20",
+               "q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30",
+               "q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40",
+               "q41", "q42", "q43", "q44", "q45", "q46", "q47", "q48", "q49", "q50"]
+  ,
   "MCQBlock1": {
     "qType": "QTYPE_MCQ5",
-    "orig": [153, 1168],
+    "orig": [378, 1926],
     "qNos": [
-      [
-        ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"]
-      ]
+      [["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"]],
+      [["q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20"]],
+      [["q21", "q22", "q23", "q24", "q25", "q26", "q27", "q28", "q29", "q30"]],
+      [["q31", "q32", "q33", "q34", "q35", "q36", "q37", "q38", "q39", "q40"]],
+      [["q41", "q42", "q43", "q44", "q45", "q46", "q47", "q48", "q49", "q50"]]
     ],  
-    "gaps" : [28, 81],
-    "bigGaps" : [0, 0]
-  },
-  "MCQBlock2": {
-    "qType": "QTYPE_MCQ5",
-    "orig": [380, 1168],
-    "qNos": [
-      [
-        ["q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20"]
-      ]
-    ],  
-    "gaps" : [28, 81],
-    "bigGaps" : [0, 0]
+    "gaps" : [66, 133],
+    "bigGaps" : [269, 0]
   }
 }
