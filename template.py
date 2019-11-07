@@ -22,8 +22,8 @@ class Pt():
     It can also correspond to a single digit of integer type Q (eg q5d1)
     """
     def __init__(self, pt, qNo, qType, val):
-        self.x=pt[0]
-        self.y=pt[1]
+        self.x=round(pt[0])
+        self.y=round(pt[1])
         self.qNo=qNo
         self.qType=qType
         self.val=val
@@ -31,7 +31,7 @@ class Pt():
 class QBlock():
     def __init__(self, dims, key, orig, traverse_pts):
         # dims = (width, height)
-        self.dims = dims
+        self.dims = tuple(round(x) for x in dims)
         self.key = key
         self.orig = orig
         self.traverse_pts = traverse_pts
@@ -80,6 +80,9 @@ class Template():
         self.concats = jsonObj["Concatenations"]
         self.singles = jsonObj["Singles"]
 
+        # Add custom options
+        self.options = jsonObj.get("Options", {})
+
         # Add new qTypes from template
         if "qTypes" in jsonObj:
             qtype_data.update(jsonObj["qTypes"])
@@ -87,6 +90,10 @@ class Template():
         # Allow template to override globals
         if "Globals" in jsonObj:
             globals().update(jsonObj['Globals'])
+
+        for k, QBlocks in jsonObj['QBlocks'].items():
+            # Add QBlock to array of grids
+            self.addQBlocks(k, QBlocks)
 
     # Expects bubbleDims to be set already
     def addQBlocks(self, key, rect):
@@ -133,7 +140,8 @@ def genQBlock(bubbleDims, QBlockDims, key, orig, qNos, gaps, vals, qType, orient
     # orig[0] += np.random.randint(-6,6)*2 # test random shift
     Qs=[]
     traverse_pts = []
-    o = orig.copy()
+    o = [float(i) for i in orig]
+
     if(col_orient == orient):
         for q in range(len(qNos)):
             pt = o.copy()
@@ -305,20 +313,4 @@ def read_template(filename):
 
 
 
-templJSON={}
-for squad in ["J", "H"]:
-    TEMPLATE_FILE = "inputs/"+squad+"_template.json";
-    if(os.path.exists(TEMPLATE_FILE)):
-        templJSON[squad] = read_template(TEMPLATE_FILE)
 
-if(len(templJSON.keys()) == 0):
-    print("Error: No template files present at 'inputs/'")
-    exit(6)
-TEMPLATES={}
-
-for squad in templJSON.keys():
-    TEMPLATES[squad] = Template(templJSON[squad])
-    for k, QBlocks in templJSON[squad].items():
-        if(k not in ["Dimensions","BubbleDimensions","Concatenations","Singles","Globals","qTypes"]):
-            # Add QBlock to array of grids
-            TEMPLATES[squad].addQBlocks(k, QBlocks)
